@@ -1,0 +1,8 @@
+bin/
+obj/
+packages/
+packages-cache/
+out.pdf
+*.rpt
+*.lic
+*.nupkg
