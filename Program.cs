@@ -6,10 +6,8 @@ using Reporter.Engine.Render;
 using Reporter.Model;
 using Reporter.Rpt;
 
-string input = args.Length > 0 ? args[0] : "order-summary.json";
-ReportModel model = Path.GetExtension(input).Equals(".rpt", StringComparison.OrdinalIgnoreCase)
-    ? ReportModelBuilder.FromRpt(input)
-    : ReportModel.FromJson(File.ReadAllText(input));
+string input = args.Length > 0 ? args[0] : Path.Combine(AppContext.BaseDirectory, "order-summary.rpt");
+ReportModel model = ReportModelBuilder.FromRpt(input);
 
 IReadOnlyDictionary<string, FormulaValue> parameters = ParameterBinding.Resolve(
     model, new Dictionary<string, string>(), useSavedValues: true);

@@ -4,5 +4,6 @@ packages/
 packages-cache/
 out.pdf
 *.rpt
+!/order-summary.rpt
 *.lic
 *.nupkg
